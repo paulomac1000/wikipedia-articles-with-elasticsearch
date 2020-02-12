@@ -3,10 +3,18 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <p>Home - fast search using jQuery autocomplete</p>
-    <p>Advanced search - show stats, update model, change feed url</p>
-    <p>Manage system - show stats, update model, change feed url</p>
-    <p>Api - show api used by this app in swagger</p>
+    <h1 class="display-4">Welcome to Wikipedia Search Engine!</h1>
+    <p>...powered by ElasticSearch</p>
+    <p>Start typing below to find result</p>
+    
+    <input id="elastic-search-input" class="form-control form-control-lg" type="text" placeholder="Start search here...">
+    <div id="elastic-result-list-container">
+        <ul id="elastic-result-list" class="list">
+            <li>
+                <h3 class="title"></h3>
+                <p class="content"></p>
+                <p class="timestamp"></p>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -22,6 +22,9 @@ namespace WikipediaSearchEngine
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+
             RegisterElasticsearch(services);
             RegisterSwagger(services);
         }

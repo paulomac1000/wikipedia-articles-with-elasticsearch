@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using WikipediaSearchEngine.Models;
 
@@ -7,14 +6,17 @@ namespace WikipediaSearchEngine.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Index()
         {
-            _logger = logger;
+            return View();
         }
 
-        public IActionResult Index()
+        public IActionResult Manage()
+        {
+            return View();
+        }
+
+        public IActionResult Api()
         {
             return View();
         }
