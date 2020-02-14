@@ -29,10 +29,30 @@ on remote, eg. From PostMan
 `pip install cElementTree`
 `pip install elasticsearch`
 9.	 Clone this repo, go to 
-`cd wikipedia-articles-with-elasticsearch\WikipediaSearchEngine\WikipediaSearchEngine`
+`cd wikipedia-articles-with-elasticsearch/WikipediaSearchEngine/WikipediaSearchEngine`
 then type
 `nano appsettings.json`
 and make sure, that endpoint to elasticsearch is proper for your machine.
 10.	 Now run website. To do this, type:
 `dotnet run`
 11.	That’s all. Now go to browser and type server adress (or localhost on this machine) with proper port and press red button on navbar to recreate index.
+
+#How to use
+
+## Home page view
+![01_Home.png](Images/01_Home.png)
+
+## The live search refreshes the results in the list
+![02_Searching.png](Images/02_Searching.png)
+
+## The application allows you to test its API, which is used by JS scripts.
+![03_TestApi.png](Images/03_TestApi.png)
+
+## You can regenerate the index at any time. The wikipedia file is updated every few weeks and is located at the same address that is given in the script.
+![04_IndexRecreating.png](Images/04_IndexRecreating.png)
+
+## Application blocks the ability to generate an index when it is currently being generated
+![05_ErrorIndexAlreadyRecreating.png](Images/05_ErrorIndexAlreadyRecreating.png)
+
+# Python script documentation
+Just go to `Docs` folder and open `Parse data & load into engine.ipynb`

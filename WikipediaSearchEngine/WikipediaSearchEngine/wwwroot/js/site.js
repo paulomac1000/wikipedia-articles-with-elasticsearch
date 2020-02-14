@@ -39,7 +39,7 @@ function updateData(data) {
 
 $("#recreate-index-btn").click(function () {
     var url = ("/api/recreate-index");
-    $.get(url, function (data) {
+    $.post(url, function (data) {
         if (data.success) {
             refreshElasticSearcherContainerSpinner();
         } else {

@@ -14,14 +14,12 @@ namespace WikipediaSearchEngine.Controllers
         private readonly IElasticClient _elasticClient;
         private readonly IConfiguration _configuration;
 
-        private static bool _isElasticDatabaseLocked;
+        private static bool _isElasticDatabaseLocked = false;
 
         public ApiController(IElasticClient elasticClient, IConfiguration configuration)
         {
             _elasticClient = elasticClient;
             _configuration = configuration;
-
-            _isElasticDatabaseLocked = false;
         }
 
         [HttpGet("simple-query-string")]
@@ -58,10 +56,6 @@ namespace WikipediaSearchEngine.Controllers
         private string RunRecreateIndexScript()
         {
             _isElasticDatabaseLocked = true;
-
-            var pythonPath = _configuration["PythonPath"];
-            if (string.IsNullOrEmpty(pythonPath))
-                return "PythonPath setting not given, check appsettings.json.";
 
             var start = new ProcessStartInfo
             {
