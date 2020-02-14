@@ -19,23 +19,25 @@ path.logs: /var/log/elasticsearch #log path, it can be useful in case of errors
 network.host: ["_site_", "127.0.0.1"] #at which addresses it returns data, here: all interfaces + localhost
 discovery.seed_hosts: 127.0.0.1 #what addresses is it looking for nodes here: only locally
 ```
-6.	Check that the server is working properly.
+6. Launch Elasticsearch
+`sudo /bin/systemctl enable elasticsearch.service`
+7.	Check that the server is working properly.
 on the server:
 `curl  http://localhost:9200/_cluster/health?pretty`
 on remote, eg. From PostMan
 `GET http://serverIp:9200/_cluster/health?pretty`
-7.	The data will come from the simplified Wikipedia dataset in Polish language. The data is available at address https://dumps.wikimedia.org/plwiki/latest/ and the newest - at address https://dumps.wikimedia.org/plwiki/latest/plwiki-latest-abstract.xml.gz . You can also find datasets for other languages, try to modify the url or search similiar phrases in google.
-8.	Install missing python packages.
+8.	The data will come from the simplified Wikipedia dataset in Polish language. The data is available at address https://dumps.wikimedia.org/plwiki/latest/ and the newest - at address https://dumps.wikimedia.org/plwiki/latest/plwiki-latest-abstract.xml.gz . You can also find datasets for other languages, try to modify the url or search similiar phrases in google.
+9.	Install missing python packages.
 `pip install cElementTree`
 `pip install elasticsearch`
-9.	 Clone this repo, go to 
+10.	 Clone this repo, go to 
 `cd wikipedia-articles-with-elasticsearch/WikipediaSearchEngine/WikipediaSearchEngine`
 then type
 `nano appsettings.json`
 and make sure, that endpoint to elasticsearch is proper for your machine.
-10.	 Now run website. To do this, type:
+11.	 Now run website. To do this, type:
 `dotnet run`
-11.	That’s all. Now go to browser and type server adress (or localhost on this machine) with proper port and press red button on navbar to recreate index.
+12.	That’s all. Now go to browser and type server adress (or localhost on this machine) with proper port and press red button on navbar to recreate index.
 
 # How to use
 
