@@ -24,7 +24,7 @@ on the server:
 `curl  http://localhost:9200/_cluster/health?pretty`
 on remote, eg. From PostMan
 `GET http://serverIp:9200/_cluster/health?pretty`
-7.	The data will come from the simplified Wikipedia corpus in Polish. The data is available at address https://dumps.wikimedia.org/plwiki/latest/ and the newest - at address https://dumps.wikimedia.org/plwiki/latest/plwiki-latest-abstract.xml.gz  . You can also find bodies for other languages, try to modify the url or search in google.
+7.	The data will come from the simplified Wikipedia dataset in Polish language. The data is available at address https://dumps.wikimedia.org/plwiki/latest/ and the newest - at address https://dumps.wikimedia.org/plwiki/latest/plwiki-latest-abstract.xml.gz . You can also find datasets for other languages, try to modify the url or search similiar phrases in google.
 8.	Install missing python packages.
 `pip install cElementTree`
 `pip install elasticsearch`
