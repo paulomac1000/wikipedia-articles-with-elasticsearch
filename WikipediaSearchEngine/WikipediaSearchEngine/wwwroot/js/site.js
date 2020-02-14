@@ -36,3 +36,32 @@ function updateData(data) {
     $("#elastic-result-list").empty();
     var elasticList = new List('elastic-result-list-container', options, data);
 }
+
+$("#recreate-index-btn").click(function () {
+    var url = ("/api/recreate-index");
+    $.get(url, function (data) {
+        if (data.success) {
+            refreshElasticSearcherContainerSpinner();
+        } else {
+            alert("Error occured: " + data.error);
+        }
+    });
+});
+
+function refreshElasticSearcherContainerSpinner() {
+    var url = ("/api/lock-elastic-database-status");
+    $.post(url, function (data) {
+        if (data.status) {
+            $("#elastic-searcher-container").waitMe({ text: "Please wait, index is recreating now..." });
+        } else {
+            $("#elastic-searcher-container").waitMe("hide");
+        }
+    });
+}
+
+function refreshElasticSearcherContainerSpinnerRecursion() {
+    refreshElasticSearcherContainerSpinner();
+    setTimeout(refreshElasticSearcherContainerSpinnerRecursion, 2500);
+}
+
+refreshElasticSearcherContainerSpinnerRecursion();

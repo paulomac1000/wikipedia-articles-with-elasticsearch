@@ -24,7 +24,6 @@ namespace WikipediaSearchEngine
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-
             RegisterElasticsearch(services);
             RegisterSwagger(services);
         }

@@ -11,11 +11,6 @@ namespace WikipediaSearchEngine.Controllers
             return View();
         }
 
-        public IActionResult Manage()
-        {
-            return View();
-        }
-
         public IActionResult Api()
         {
             return View();

@@ -498,3 +498,6 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/csharp,python,windows,jupyternotebooks
 /Docs/plwiki-latest-abstract.xml
+/Docs/plwiki-latest-abstract.xml.gz
+/WikipediaSearchEngine/WikipediaSearchEngine/plwiki-latest-abstract.xml
+/WikipediaSearchEngine/WikipediaSearchEngine/plwiki-latest-abstract.xml.gz
